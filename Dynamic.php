@@ -40,7 +40,7 @@ if($result = mysql_query($sql)){
 $sql = "SELECT p.*, pt.title, pt.description
         FROM `app_product` p
         INNER JOIN `app_product_translation` pt ON p.id = pt.product_id
-        WHERE p.id = 1 AND pet.language_code = '".$_SESSION['current_language']."'";
+        WHERE p.id = 1 AND pt.language_code = '".$_SESSION['current_language']."'";
 if($result = mysql_query($sql)){
     if($row = mysql_fetch_assoc($result)){
         echo "Current Language: ".$row["title"];
